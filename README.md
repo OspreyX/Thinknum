@@ -14,11 +14,11 @@ For more information please contact gregory.ugwi@thinknum.com
     git clone git://github.com/thinknum/R-package.git
     R CMD build R-package/
 
-This will create a file named "Thinknum_1.0.tar.gz". The current version of Thinknum on github is "1.0"
+This will create a file named "Thinknum_1.2.tar.gz". The current version of Thinknum on github is "1.2"
 
 Then move the file into your working directory in R and type:
 
-    > install.packages("Thinknum_1.0.tar.gz",repos=NULL,type="source")
+    > install.packages("Thinknum_1.2.tar.gz",repos=NULL,type="source")
     > library(Thinknum)
 
 A simpler solution is to use the 'devtools' package.

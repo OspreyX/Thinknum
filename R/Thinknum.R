@@ -14,7 +14,7 @@
 Thinknum <- function(expression) {
 
     ## Build API URL and add auth_token if available
-    string <- paste("http://www.thinknum.com/api/v1/?expression=", expression, sep="")
+    string <- paste("http://www.thinknum.com/api/v1/?expression=", URLencode(expression, reserved = TRUE), sep="")
     ## Download and parse data
     response <- getURL(string)
     if (length(grep("403 Forbidden", response)))
