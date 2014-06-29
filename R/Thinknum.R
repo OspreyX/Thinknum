@@ -14,12 +14,12 @@
 Thinknum <- function(expression) {
 
     ## Build API URL and add auth_token if available
-    string <- paste("http://www.thinknum.com/api/v1/?expression=", URLencode(expression, reserved = TRUE), sep="")
+    string <- paste("http://data.thinknum.com/api/v1/?expression=", URLencode(expression, reserved = TRUE), sep="")
     ## Download and parse data
     response <- getURL(string)
     if (length(grep("403 Forbidden", response)))
-        stop("Your usage has been flagged as a violation of Thinknum's terms of service agreement. For help, please contact us at thinknum@thinknum.com")
-    json <- try(fromJSON(response, nullValue = as.numeric(NA)), silent = TRUE)
+        stop("Your usage has been flagged as a violation of Thinknum's terms of service agreement. For help, please contact us at support@thinknum.com")
+    json <- try(fromJSON(response, nullValue = as.numeric(NA)), silent = FALSE)
     ## Check if code exists
     if (inherits(json, 'try-error')) {
         error_str <- paste("Something has gone wrong. Please copy output and email to thinknum@thinknum.com:", string, sep="\n")
